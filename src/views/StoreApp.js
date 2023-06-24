@@ -25,7 +25,7 @@ export const StoreApp = () => {
       ) : null}
       {isLogged ? (
         <View style={{ flexDirection: 'row' }}>
-          <SearchBar />
+          <SearchBar  />
         </View>
       ) : null}
       {isLogged ? <StackTop /> : <StackAuth />}
