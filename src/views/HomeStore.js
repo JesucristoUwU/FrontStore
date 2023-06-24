@@ -1,24 +1,19 @@
 import React  from 'react';
-import { View, FlatList } from 'react-native';
-import { getAllProducts } from '../services/getAllProducts';
-import { ProductCard } from '../components/ProductCard';
+import { View, Text } from 'react-native';
+import { getByCategorie } from '../services/getByCategorie';
 
 export const HomeStore = () => {
-   const {isLoading, data} = getAllProducts()
+
+   // cargar productos por categoria
+   const { categorie, isLoading } = getByCategorie("ropa")
+   const { categorie: categorie2, isLoading: isLoading2} = getByCategorie("accesorio")
+   const { categorie: categorie3, isLoading: isLoading3 } = getByCategorie("electronica")
+   
+   console.log(categorie, categorie2, categorie3);
 
    return (
-      <View>
-         <FlatList
-            data={ data }
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => (
-            <ProductCard
-               nombre={item.nombre}
-               precio={item.precio}
-               image={item.url}
-            />
-            )}
-         />
+      <View style={{flex: 1}}>
+         <Text>Todos los productos</Text>
       </View>
    );
 };
