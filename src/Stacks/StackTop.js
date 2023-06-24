@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { CategoriesStore, HomeStore } from '../views'
 import { SafeAreaView } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import ProfileComponent from '../components/ProfileComponent'
+import {ProfileComponent} from '../components/ProfileComponent'
 import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator()

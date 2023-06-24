@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { Text, ScrollView, View, TouchableOpacity } from 'react-native';
 import { getByCategorie } from '../services/getByCategorie';
 import SmallCard from '../components/SmallCard';

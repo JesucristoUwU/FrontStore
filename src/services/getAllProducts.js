@@ -7,7 +7,7 @@ export const getAllProducts = () => {
    const [data, setData] = useState([]);
 
    const handleUsers = async () => {
-      const response = await fetch('http://192.168.1.22:8000/api/products');
+      const response = await fetch('http://192.168.1.21:8000/api/products');
       const ResProducts = await response.json();
 
       setData(ResProducts);
