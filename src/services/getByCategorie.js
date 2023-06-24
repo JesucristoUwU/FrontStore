@@ -7,7 +7,7 @@ export const getByCategorie = (category = "electronica") => {
    const [isLoading ,setIsLoading] = useState(true)
 
    const handleResponseCategorie = async () => {
-      const res = await fetch(`http://localhost:8000/api/products/${categorie}`);
+      const res = await fetch(`http://192.168.1.22:8000/api/products/${category}`);
       const categories = await res.json()
 
       setCategorie(categories)

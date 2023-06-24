@@ -1,6 +1,8 @@
+import React from "react"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { Register, Login } from "../Auth/views"
 
+const StoreApp = React.lazy(() => import("../views/StoreApp"))
 const Stack = createNativeStackNavigator()
 
 export const StackAuth = () => {
