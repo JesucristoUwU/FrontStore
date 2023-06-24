@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import "whatwg-fetch"
 
 export const getAllProducts = () => {
 
@@ -9,8 +10,7 @@ export const getAllProducts = () => {
       const response = await fetch('http://192.168.1.22:8000/api/products');
       const ResProducts = await response.json();
 
-      const Array = ResProducts.map( producto => producto)
-      setData(Array);
+      setData(ResProducts);
       setIsLoading(false);
    }
 

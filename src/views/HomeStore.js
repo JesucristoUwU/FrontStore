@@ -1,22 +1,24 @@
 import React  from 'react';
-import { View, Text } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { getAllProducts } from '../services/getAllProducts';
+import { ProductCard } from '../components/ProductCard';
 
 export const HomeStore = () => {
-
-   const {isLoading, data } = getAllProducts();
-
-   if(isLoading) {
-      return (
-         <View>
-            <Text>Cargando...</Text>
-         </View>
-      );
-   }
+   const {isLoading, data} = getAllProducts()
 
    return (
       <View>
-
+         <FlatList
+            data={ data }
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+            <ProductCard
+               nombre={item.nombre}
+               precio={item.precio}
+               image={item.url}
+            />
+            )}
+         />
       </View>
    );
 };
